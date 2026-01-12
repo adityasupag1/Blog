@@ -1,0 +1,90 @@
+.home {
+  min-height: 100vh;
+  /* Use the overlay variable over the image */
+  background: linear-gradient(var(--overlay-bg), var(--overlay-bg)),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+  background-size: cover;
+  background-position: center;
+  color: var(--text-main);
+  transition: background 0.3s ease;
+}
+
+/* HEADER */
+.home-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--text-accent);
+}
+
+/* HERO */
+.hero {
+  max-width: 800px;
+  margin: 20px auto;
+  background: var(--section-bg);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* LATEST BLOGS */
+.latest-blogs {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.latest-blogs h2 {
+  color: var(--text-accent);
+  margin-bottom: 25px;
+}
+
+.blog-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.preview-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preview-card:hover {
+  transform: translateY(-6px);
+}
+
+.preview-card h3 {
+  color: var(--text-accent);
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--text-accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--footer-bg);
+  text-align: center;
+  padding: 20px;
+  transition: background 0.3s;
+}
+
+.social-links a {
+  margin: 0 10px;
+  color: var(--text-accent);
+  text-decoration: none;
+}
