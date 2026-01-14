@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CreateBlog = ({ blogs, setBlogs }) => {
@@ -57,6 +57,10 @@ const CreateBlog = ({ blogs, setBlogs }) => {
     setBlogs([newBlog, ...blogs]); // Add to beginning of list
     navigate("/blogs");
   };
+
+  useEffect(()=>{
+   localStorage.setItem("blogs",JSON.stringify(blogs))
+  },[blogs])
 
   return (
     <div style={pageStyle}>
