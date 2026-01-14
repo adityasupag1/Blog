@@ -1,11 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import blogs from '../data/blogs'
+import dummyBlogs from '../data/blogs'
 const EditBlog = () => {
 
-  // copy of existing blogs Data
-  const dummyBlogs= [...blogs];
-  //
+
 	const { id } = useParams();
 	const navigate = useNavigate();
 
@@ -40,7 +38,7 @@ const EditBlog = () => {
 			);
 			setContent(foundBlog.content || "");
 		}
-	}, [id,dummyBlogs]);
+	}, [id]);
 
 	// ✅ UPDATE BLOG
 	const handleUpdate = (e) => {
