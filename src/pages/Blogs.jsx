@@ -22,9 +22,21 @@ const Blogs = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
 
-  useEffect(() => {
-    setBlogList([...blogs]);
-  }, []);
+ useEffect(() => {
+  const storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+  const storedIds = new Set(storedBlogs.map(b => b.id));
+
+  const uniqueDummyBlogs = blogs.filter(
+    b => !storedIds.has(b.id)
+  );
+
+  const mergedBlogs = [...storedBlogs, ...uniqueDummyBlogs];
+
+  setBlogList(mergedBlogs);
+}, []);
+
+
 
   // Filter by search
   const filteredBlogs = blogList.filter(blog =>
@@ -89,7 +101,7 @@ const Blogs = () => {
           >
             <img src={blog.image} alt={blog.title} style={styles.image} />
             <h3>{blog.title}</h3>
-            <p>{blog.desc}</p>
+            <p>{blog.description || blog.desc}</p>
             <Link to={`/blogs/${blog.id}`} style={styles.btn}>Read More</Link>
             <Link
               to={`/edit/${blog.id}`}
