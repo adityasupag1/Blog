@@ -61,9 +61,9 @@ const Home = () => {
       <footer className="footer">
         <p>© 2026 MyBlog | All Rights Reserved</p>
         <div className="social-links">
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">GitHub</a>
+          <a href="https://instagram.com">Instagram</a>
+          <a href="https://linkedin.com">LinkedIn</a>
+          <a href="https://github.com">GitHub</a>
         </div>
       </footer>
 
