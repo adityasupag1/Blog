@@ -40,7 +40,7 @@ const EditBlog = () => {
 			);
 			setContent(foundBlog.content || "");
 		}
-	}, [id]);
+	}, [id,dummyBlogs]);
 
 	// ✅ UPDATE BLOG
 	const handleUpdate = (e) => {
